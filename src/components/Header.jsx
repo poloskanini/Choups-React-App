@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react'
+import { Link, NavLink } from "react-router-dom"
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
   ArrowPathIcon,
@@ -32,13 +33,18 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="z-10 relative">
+    <header className="z-10 sticky top-0 bg-white">
       <nav className="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5 text-lg">
+          <NavLink
+            to="/"
+            className="-m-1.5 p-1.5 text-lg">
+              <span className='font-normal text-black' >SANDRINE</span> <span className='font-bold text-custom-purple' >MENEZES</span>
+            </NavLink>
+          {/* <a href="#" className="-m-1.5 p-1.5 text-lg">
             <span className='font-normal text-black' >SANDRINE</span> <span className='font-bold text-custom-purple' >MENEZES</span>
-            {/* <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" /> */}
-          </a>
+            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+          </a> */}
         </div>
         <div className="flex lg:hidden">
           <button
@@ -51,10 +57,11 @@ export default function Header() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12 items-center">
-
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <NavLink
+          to="/"
+          className={({isActive}) => `${isActive && "underline decoration-sky-800"} text-sm font-semibold leading-6 text-gray-900`}>
             Accueil
-          </a>
+          </NavLink>
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Nos services
@@ -105,14 +112,21 @@ export default function Header() {
               </Popover.Panel>
             </Transition>
           </Popover>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <NavLink
+          to="/qui-sommes-nous"
+          className={({isActive}) => `${isActive && "underline decoration-sky-800 text-custom-purple"} text-sm font-semibold leading-6 text-gray-900`}>
             Qui sommes-nous
-          </a>
+          </NavLink>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900 border-2 border-custom-purple rounded-full p-3">
+          <NavLink
+            to="/contact"
+            className="text-sm font-semibold leading-6 text-gray-900 border border-custom-purple rounded-full p-3">
+              Contact <span aria-hidden="true">&rarr;</span>
+          </NavLink>
+          {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900 border border-custom-purple rounded-full p-3">
             Contact <span aria-hidden="true">&rarr;</span>
-          </a>
+          </a> */}
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
