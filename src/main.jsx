@@ -17,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Choups-React-App" element={<Home />} />
           <Route path="/qui-sommes-nous" element={<QuiSommesNous />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
