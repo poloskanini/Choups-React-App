@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import TimeLine from "./TimeLine"
+import ContentWork from '../components/ContentWork'
+import Testimonials from '../components/Testimonials'
 import VideoHero from "../components/VideoHero"
 import Footer from '../components/Footer'
 
@@ -17,8 +19,8 @@ export default function Home() {
 
   return (
     <div className="bg-white">
+      <main className='h-full'>
       <VideoHero />
-      <main>
         <div className="relative isolate">
           <svg
             className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
@@ -71,17 +73,14 @@ export default function Home() {
                     labore commodo nulla aliqua proident mollit ullamco exercitation tempor. Sint aliqua anim nulla sunt
                     mollit id pariatur in voluptate cillum.
                   </p>
-                  {/* <div className="mt-10 flex items-center gap-x-6">
+                  <div className="mt-10 flex items-center gap-x-6">
                     <a
                       href="#"
-                      className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      className="rounded-md bg-custom-purple px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-300 hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition focus-visible:outline-indigo-600"
                     >
-                      Get started
+                      Appelez nous
                     </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                      Live demo <span aria-hidden="true">→</span>
-                    </a>
-                  </div> */}
+                  </div>
                 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
                   <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
@@ -137,6 +136,8 @@ export default function Home() {
         </div>
       </main>
       <TimeLine />
+      <Testimonials />
+      <ContentWork />
       <Footer />
     </div>
   )

@@ -52,35 +52,6 @@ const timeline = [
     dateTime: '2022-12',
   },
 ]
-const jobOpenings = [
-  {
-    id: 1,
-    role: 'Droit du travail',
-    href: '#',
-    description:
-      'Quos sunt ad dolore ullam qui. Enim et quisquam dicta molestias. Corrupti quo voluptatum eligendi autem labore.',
-    salary: '$75,000 USD',
-    location: 'San Francisco, CA',
-  },
-  {
-    id: 2,
-    role: 'Sécurité Sociale',
-    href: '#',
-    description:
-      'Et veniam et officia dolorum rerum. Et voluptas consequatur magni sapiente amet voluptates dolorum. Ut porro aut eveniet.',
-    salary: '$125,000 USD',
-    location: 'San Francisco, CA',
-  },
-  {
-    id: 3,
-    role: "Prud'hommes",
-    href: '#',
-    description:
-      'Veniam ipsam nisi quas architecto eos non voluptatem in nemo. Est occaecati nihil omnis delectus illum est.',
-    salary: '$105,000 USD',
-    location: 'San Francisco, CA',
-  },
-]
 const footerNavigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
@@ -181,7 +152,7 @@ export default function TimeLine() {
       <main className="isolate">
 
         {/* Timeline section */}
-        <div className="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto mt-20 xl:mt-60 max-w-7xl p-6 lg:px-8 lg:bg-slate-100 rounded">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
             {timeline.map((item) => (
               <div key={item.name}>
@@ -202,65 +173,6 @@ export default function TimeLine() {
                 <p className="mt-1 text-base leading-7 text-gray-600">{item.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Logo cloud */}
-        <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
-            <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Nos clients parlent de nous
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-              Aliquip reprehenderit incididunt amet quis fugiat ut velit. Sit occaecat labore proident cillum in nisi
-              adipisicing officia excepteur tempor deserunt.
-            </p>
-            <div className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
-              <img
-                className="col-span-2 max-h-20 w-full object-contain lg:col-span-1"
-                src="https://www.sngaf.com/wp-content/uploads/2023/08/NEW-LOGO-SNGAF-2022-01.png"
-                alt="Transistor"
-                width={58}
-                height={48}
-              />
-              <img
-                className="col-span-2 max-h-20 w-full object-contain lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
-                alt="Reform"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 max-h-20 w-full object-contain lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg"
-                alt="Tuple"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 max-h-20 w-full object-contain sm:col-start-2 lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
-                alt="SavvyCal"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 col-start-2 max-h-20 w-full object-contain sm:col-start-auto lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
-                alt="Statamic"
-                width={158}
-                height={48}
-              />
-            </div>
-            <div className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl" aria-hidden="true">
-              <div
-                className="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
-                style={{
-                  clipPath:
-                    'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
-                }}
-              />
-            </div>
           </div>
         </div>
 
@@ -358,51 +270,7 @@ export default function TimeLine() {
             </div>
           </div>
         </div>
-
-        {/* Content section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8 mb-20">
-          <div className="mx-auto flex max-w-2xl flex-col items-end justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row">
-            <div className="w-full lg:max-w-lg lg:flex-auto">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Nous sommes toujours à la recherche de plus de justice sur tous nos dossiers
-              </h2>
-              <p className="mt-6 text-xl leading-8 text-gray-600">
-                Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est euismod lacus. Est non placerat nam arcu.
-                Cras purus nibh cursus sit eu in id.
-              </p>
-              <img
-                src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&h=1104&q=80"
-                alt=""
-                className="mt-16 aspect-[6/5] w-full rounded-2xl bg-gray-50 object-cover lg:aspect-auto lg:h-[34.5rem]"
-              />
-            </div>
-            <div className="w-full lg:max-w-xl lg:flex-auto">
-              <ul className="-my-8 divide-y divide-gray-100">
-                {jobOpenings.map((opening) => (
-                  <li key={opening.id} className="py-8">
-                    <dl className="relative flex flex-wrap gap-x-3">
-                      <dt className="sr-only">Role</dt>
-                      <dd className="w-full flex-none text-lg font-semibold tracking-tight text-gray-900">
-                        <a href={opening.href}>
-                          {opening.role}
-                          <span className="absolute inset-0" aria-hidden="true" />
-                        </a>
-                      </dd>
-                      <dt className="sr-only">Description</dt>
-                      <dd className="mt-2 w-full flex-none text-base leading-7 text-gray-600">{opening.description}</dd>
-                
-                    </dl>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8 flex border-t border-gray-100 pt-8">
-                <a href="#" className="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                  Voir tous les sujets <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </main>
 
     </div>

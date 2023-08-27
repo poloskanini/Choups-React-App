@@ -33,8 +33,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="z-10 sticky top-0 bg-white">
-      <nav className="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header className="z-10 sticky top-0 bg-slate-100">
+      <nav className="mx-auto flex items-center justify-between p-6 lg:px-8 drop-shadow-2xl" aria-label="Global">
         <div className="flex lg:flex-1">
           <NavLink
             to="/"
@@ -59,7 +59,7 @@ export default function Header() {
         <Popover.Group className="hidden lg:flex lg:gap-x-12 items-center">
           <NavLink
           to="/"
-          className={({isActive}) => `${isActive && "underline decoration-sky-800"} text-sm font-semibold leading-6 text-gray-900`}>
+          className={({isActive}) => `${isActive && "underline decoration-custom-purple text-blue-800"} text-sm font-semibold leading-6 text-gray-900`}>
             Accueil
           </NavLink>
           <Popover className="relative">
@@ -114,7 +114,7 @@ export default function Header() {
           </Popover>
           <NavLink
           to="/qui-sommes-nous"
-          className={({isActive}) => `${isActive && "underline decoration-sky-800 text-custom-purple"} text-sm font-semibold leading-6 text-gray-900`}>
+          className={({isActive}) => `${isActive && "underline decoration-custom-purple text-blue-800"} text-sm font-semibold leading-6 text-gray-900`}>
             Qui sommes-nous
           </NavLink>
         </Popover.Group>
@@ -153,12 +153,19 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-              <a
+              <NavLink
+                to="/"
+                className={({isActive}) => `${isActive && "underline decoration-custom-purple text-blue-800"} -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50`}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  Accueil
+              </NavLink>
+              {/* <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Accueil
-                </a>
+                </a> */}
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
@@ -185,20 +192,34 @@ export default function Header() {
                     </>
                   )}
                 </Disclosure>
-                <a
+                {/* <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Qui sommes-nous
-                </a>
+                </a> */}
+                <NavLink
+                to="/qui-sommes-nous"
+                className={({isActive}) => `${isActive && "underline decoration-sky-800 text-custom-purple"} -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50`}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  Qui sommes-nous
+                </NavLink>
               </div>
               <div className="py-6">
-                <a
+              <NavLink
+                to="/contact"
+                className="text-base font-semibold leading-6 text-gray-900 border border-custom-purple rounded-full p-3"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  Contact <span aria-hidden="true">&rarr;</span>
+              </NavLink>
+                {/* <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Contact <span aria-hidden="true">&rarr;</span>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
